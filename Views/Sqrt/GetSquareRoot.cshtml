@@ -1,0 +1,31 @@
+@{
+    ViewData["Title"] = "Compare Square Roots";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Enter The Two Numbers To Compare The Square Roots</p>
+
+<div>
+    <form asp-controller="Sqrt" asp-action="GetSquareRoot" method="POST">
+       <p> <input type="number" min="0" placeholder="Enter First Number" name="firstNumber" > </p>
+       <p> <input type="number" min="0" placeholder="Enter Second Number" name="secondNumber"> </p>
+       <p> <button type="submit">Submit</button> </p>
+
+    </form>
+</div>
+
+<div>
+
+    @if (@ViewBag.FirstNumber !=null && @ViewBag.SecondNumber != null)
+    {
+            
+
+        <p>First Number is: @ViewBag.FirstNumber  </p>
+        <p>Second Number is: @ViewBag.SecondNumber</p>
+        <p>Root of First Number: @ViewBag.FirstRoot  </p>
+        <p>Root of Second Number: @ViewBag.SecondRoot  </p>
+        <p style="color: red;"> @ViewBag.Message </p>
+    }
+            
+
+</div>
